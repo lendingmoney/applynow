@@ -693,16 +693,37 @@
         submitted_at: new Date().toISOString()
       };
 
-      const result = await window.dataSdk.create(formData);
-      
-      if (result.isOk) {
-        // Save submission time
-        localStorage.setItem('lastLeadSubmitTime', Date.now().toString());
+      try {
+        // Send to Formspree
+        const formspreeResponse = await fetch('https://formspree.io/f/mwvnpgww', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            full_name: formData.full_name,
+            email: formData.email,
+            phone: formData.phone,
+            loan_amount: formData.loan_amount,
+            loan_purpose: formData.loan_purpose,
+            submitted_at: formData.submitted_at
+          })
+        });
+
+        // Also save to Data SDK
+        const result = await window.dataSdk.create(formData);
         
-        form.classList.add('hidden');
-        successMessage.classList.remove('hidden');
-        startCountdown();
-      } else {
+        if (result.isOk && formspreeResponse.ok) {
+          // Save submission time
+          localStorage.setItem('lastLeadSubmitTime', Date.now().toString());
+          
+          form.classList.add('hidden');
+          successMessage.classList.remove('hidden');
+          startCountdown();
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (error) {
         // Show inline error
         const errorDiv = document.createElement('div');
         errorDiv.className = 'bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-red-400 text-sm mb-4';
@@ -753,5 +774,5 @@
 
     init();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cbb241310c3d220',t:'MTc3MDcyMTYyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cbb3276b5d091c4',t:'MTc3MDcyMjIxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
