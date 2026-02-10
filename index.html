@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LendingLoan - Get Approved Today</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    * {
+      font-family: 'DM Sans', sans-serif;
+    }
+    .font-display {
+      font-family: 'Playfair Display', serif;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.5); }
+    }
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+    .glow-animation {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border-radius: 12px;
+      font-weight: bold;
+      color: white;
+      font-size: 24px;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+ </head>
+ <body class="h-full">
+  <div id="app-wrapper" class="w-full h-full overflow-auto bg-slate-900"><!-- Header -->
+   <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-900/80 border-b border-slate-800/50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+     <div class="flex items-center gap-3">
+      <div class="logo-icon">
+       <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" /> <path d="M12 12L8 16l4 4 8-8" />
+       </svg>
+      </div>
+      <div>
+       <div class="font-bold text-white text-lg">
+        LendingLoan
+       </div>
+       <div class="text-emerald-400 text-xs font-semibold">
+        Fast &amp; Easy Loans
+       </div>
+      </div>
+     </div>
+     <div class="hidden md:flex items-center gap-8 text-sm text-slate-400"><a href="#" class="hover:text-white transition-colors">About</a> <a href="#" class="hover:text-white transition-colors">How It Works</a> <a href="#" class="hover:text-white transition-colors">Contact</a>
+     </div>
+    </div>
+   </header><!-- Hero Section -->
+   <section class="relative min-h-screen flex items-center justify-center px-4 py-12 overflow-hidden"><!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+     <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"></div>
+     <div class="absolute bottom-20 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
+     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-600/5 rounded-full blur-3xl"></div>
+    </div><!-- Grid Pattern -->
+    <div class="absolute inset-0 opacity-20">
+     <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg"><defs>
+       <pattern id="grid" width="40" height="40" patternunits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#10b981" stroke-width="0.5" opacity="0.3" />
+       </pattern>
+      </defs> <rect width="100%" height="100%" fill="url(#grid)" />
+     </svg>
+    </div>
+    <div class="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center"><!-- Right Form (moved to top) -->
+     <div class="relative lg:order-2">
+      <div class="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-3xl blur-xl"></div>
+      <div class="relative bg-slate-800/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 shadow-2xl">
+       <div class="text-center mb-6">
+        <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-xl flex items-center justify-center mx-auto mb-4 float-animation">
+         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg>
+        </div>
+        <h2 id="form-title" class="text-2xl font-bold text-white mb-2">Apply in Minutes</h2>
+        <p class="text-slate-400 text-sm">No obligation • No credit impact • Powered by LendingLoan</p>
+       </div>
+       <form id="loan-form" class="space-y-4">
+        <div><label for="full_name" class="block text-sm font-medium text-slate-300 mb-2">Full Name</label> <input type="text" id="full_name" name="full_name" required class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all" placeholder="John Smith">
+        </div>
+        <div><label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email Address</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all" placeholder="john@example.com">
+        </div>
+        <div><label for="phone" class="block text-sm font-medium text-slate-300 mb-2">Phone Number</label> <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all" placeholder="(555) 123-4567">
+        </div>
+        <div><label for="loan_amount" class="block text-sm font-medium text-slate-300 mb-2">Desired Loan Amount</label> <select id="loan_amount" name="loan_amount" required class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all"> <option value="" class="bg-slate-800">Select amount</option> <option value="$5,000 - $10,000" class="bg-slate-800">$5,000 - $10,000</option> <option value="$10,000 - $25,000" class="bg-slate-800">$10,000 - $25,000</option> <option value="$25,000 - $50,000" class="bg-slate-800">$25,000 - $50,000</option> <option value="$50,000 - $100,000" class="bg-slate-800">$50,000 - $100,000</option> <option value="$100,000+" class="bg-slate-800">$100,000+</option> </select>
+        </div>
+        <div><label for="loan_purpose" class="block text-sm font-medium text-slate-300 mb-2">Loan Purpose</label> <select id="loan_purpose" name="loan_purpose" required class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all"> <option value="" class="bg-slate-800">Select purpose</option> <option value="Debt Consolidation" class="bg-slate-800">Debt Consolidation</option> <option value="Home Improvement" class="bg-slate-800">Home Improvement</option> <option value="Business" class="bg-slate-800">Business</option> <option value="Auto" class="bg-slate-800">Auto</option> <option value="Medical" class="bg-slate-800">Medical</option> <option value="Other" class="bg-slate-800">Other</option> </select>
+        </div><button type="submit" id="submit-btn" class="w-full py-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold rounded-xl transition-all duration-300 glow-animation flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"> <span id="button-text">Get My Free Quote</span>
+         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+         </svg></button>
+        <p class="text-center text-slate-500 text-xs mt-4">By submitting, you agree to our Terms of Service and Privacy Policy</p>
+       </form><!-- Success Message -->
+       <div id="success-message" class="hidden text-center py-12">
+        <div class="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
+         <svg class="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+         </svg>
+        </div>
+        <h3 class="text-4xl font-bold text-white mb-4">Thank You!</h3>
+        <p class="text-emerald-400 text-lg font-semibold mb-4">Your application has been submitted successfully</p>
+        <p class="text-slate-400 mb-6">Our LendingLoan team will contact you within 24 hours with your personalized quote.</p>
+        <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-6 mb-6">
+         <p class="text-slate-300 text-sm mb-2"><span class="text-emerald-400 font-semibold">Next Step:</span> Check your email for confirmation</p>
+         <p class="text-slate-400 text-xs">We'll send updates and your loan options to the email address you provided</p>
+        </div>
+        <div id="countdown-message" class="text-slate-400 text-sm mb-6">
+         You can submit another application in <span id="countdown" class="text-emerald-400 font-bold">24:00:00</span>
+        </div><button id="close-message" class="w-full py-3 bg-slate-700/50 hover:bg-slate-700 text-white font-semibold rounded-xl transition-all"> Got It </button>
+       </div>
+      </div>
+     </div><!-- Left Content -->
+     <div class="text-center lg:text-left lg:order-1">
+      <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-2 mb-6"><span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span> <span class="text-emerald-400 text-sm font-medium">Trusted by LendingLoan</span>
+      </div>
+      <h1 id="hero-title" class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Get the <span class="gradient-text">Funding</span> You Need Today</h1>
+      <p id="hero-subtitle" class="text-slate-400 text-lg md:text-xl mb-8 max-w-lg mx-auto lg:mx-0">Quick approvals, competitive rates, and flexible terms tailored to your financial goals. LendingLoan connects you with the best loan options.</p><!-- Trust Indicators -->
+      <div class="flex flex-wrap justify-center lg:justify-start gap-6 mb-8">
+       <div class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+         <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg>
+        </div><span class="text-slate-300 text-sm">$250M+ Funded</span>
+       </div>
+       <div class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+         <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+         </svg>
+        </div><span class="text-slate-300 text-sm">250K+ Happy Customers</span>
+       </div>
+       <div class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+         <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+         </svg>
+        </div><span class="text-slate-300 text-sm">4.8/5 Rating</span>
+       </div>
+      </div><!-- Customer Reviews -->
+      <div class="space-y-3"><!-- 5 Star Review -->
+       <div class="bg-slate-700/30 border border-slate-600/30 rounded-lg p-3">
+        <div class="flex items-start gap-3">
+         <div class="flex gap-1">
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+         </div>
+         <div class="flex-1">
+          <p class="text-slate-300 text-xs font-medium">Sarah M.</p>
+          <p class="text-slate-400 text-xs">Amazing experience! Got approved in 6 hours.</p>
+         </div>
+        </div>
+       </div><!-- 5 Star Review -->
+       <div class="bg-slate-700/30 border border-slate-600/30 rounded-lg p-3">
+        <div class="flex items-start gap-3">
+         <div class="flex gap-1">
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+         </div>
+         <div class="flex-1">
+          <p class="text-slate-300 text-xs font-medium">James T.</p>
+          <p class="text-slate-400 text-xs">Best rates I found. No hidden charges!</p>
+         </div>
+        </div>
+       </div><!-- 4 Star Review -->
+       <div class="bg-slate-700/30 border border-slate-600/30 rounded-lg p-3">
+        <div class="flex items-start gap-3">
+         <div class="flex gap-1">
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-slate-500" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+         </div>
+         <div class="flex-1">
+          <p class="text-slate-300 text-xs font-medium">Emily R.</p>
+          <p class="text-slate-400 text-xs">Great service, super helpful team!</p>
+         </div>
+        </div>
+       </div><!-- 3 Star Review -->
+       <div class="bg-slate-700/30 border border-slate-600/30 rounded-lg p-3">
+        <div class="flex items-start gap-3">
+         <div class="flex gap-1">
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-slate-500" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+          <svg class="w-4 h-4 text-slate-500" fill="currentColor" viewbox="0 0 20 20">
+           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+         </div>
+         <div class="flex-1">
+          <p class="text-slate-300 text-xs font-medium">Michael K.</p>
+          <p class="text-slate-400 text-xs">Good rates but wish process was faster.</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Features Section -->
+   <section class="py-20 px-4 bg-slate-800/50">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Why Choose LendingLoan?</h2>
+      <p class="text-slate-400 max-w-2xl mx-auto">Experience a lending process designed with you in mind</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8"><!-- Feature 1 -->
+      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 hover:border-emerald-500/30 transition-all duration-300 group">
+       <div class="w-14 h-14 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+       </div>
+       <h3 id="feature-1-title" class="text-xl font-bold text-white mb-3">Lightning Fast Approval</h3>
+       <p class="text-slate-400">Get approved in as little as 24 hours with our streamlined digital process.</p>
+      </div><!-- Feature 2 -->
+      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 hover:border-emerald-500/30 transition-all duration-300 group">
+       <div class="w-14 h-14 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h3 id="feature-2-title" class="text-xl font-bold text-white mb-3">Competitive Rates</h3>
+       <p class="text-slate-400">Access rates starting from 5.99% APR with flexible repayment options.</p>
+      </div><!-- Feature 3 -->
+      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 hover:border-emerald-500/30 transition-all duration-300 group">
+       <div class="w-14 h-14 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+       </div>
+       <h3 id="feature-3-title" class="text-xl font-bold text-white mb-3">No Hidden Fees</h3>
+       <p class="text-slate-400">Transparent pricing with no prepayment penalties or origination fees.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- About Us Section -->
+   <section id="about" class="py-20 px-4 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">About LendingLoan</h2>
+      <p class="text-slate-400 max-w-2xl mx-auto">Your trusted partner in financial growth since 2015</p>
+     </div>
+     <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+       <h3 class="text-2xl font-bold text-white mb-4">Our Mission</h3>
+       <p class="text-slate-300 mb-4">At LendingLoan, we believe everyone deserves access to fair, transparent lending. We've helped over 250,000 customers achieve their financial goals with quick approvals, competitive rates, and zero hidden fees.</p>
+       <p class="text-slate-300 mb-6">Founded on principles of transparency and customer-first service, we're committed to making the lending process simple, fast, and hassle-free.</p>
+       <div class="space-y-3">
+        <div class="flex items-center gap-3">
+         <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+         </svg><span class="text-slate-300">Licensed &amp; regulated lender</span>
+        </div>
+        <div class="flex items-center gap-3">
+         <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+         </svg><span class="text-slate-300">Bank-grade security</span>
+        </div>
+        <div class="flex items-center gap-3">
+         <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+         </svg><span class="text-slate-300">24/7 customer support</span>
+        </div>
+       </div>
+      </div>
+      <div class="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-emerald-500/20 rounded-2xl p-12 text-center">
+       <div class="text-5xl font-bold text-emerald-400 mb-4">
+        $250M+
+       </div>
+       <div class="text-slate-300 mb-8">
+        Total Amount Funded
+       </div>
+       <div class="grid grid-cols-2 gap-6">
+        <div>
+         <div class="text-3xl font-bold text-white">
+          250K+
+         </div>
+         <div class="text-sm text-slate-400">
+          Happy Customers
+         </div>
+        </div>
+        <div>
+         <div class="text-3xl font-bold text-white">
+          9+
+         </div>
+         <div class="text-sm text-slate-400">
+          Years in Business
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Services Section -->
+   <section id="services" class="py-20 px-4 bg-slate-800/50 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Our Services</h2>
+      <p class="text-slate-400 max-w-2xl mx-auto">Flexible lending solutions tailored to your needs</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 hover:border-emerald-500/30 transition-all">
+       <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
+        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h3 class="text-lg font-bold text-white mb-2">Personal Loans</h3>
+       <p class="text-slate-400 text-sm">Borrow $5,000 to $100,000+ for any purpose with flexible repayment terms.</p>
+      </div>
+      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 hover:border-emerald-500/30 transition-all">
+       <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
+        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+       </div>
+       <h3 class="text-lg font-bold text-white mb-2">Debt Consolidation</h3>
+       <p class="text-slate-400 text-sm">Combine multiple debts into one manageable payment with lower rates.</p>
+      </div>
+      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 hover:border-emerald-500/30 transition-all">
+       <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
+        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h3 class="text-lg font-bold text-white mb-2">Business Loans</h3>
+       <p class="text-slate-400 text-sm">Grow your business with funding up to $500,000 and fast approval.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Certifications Section -->
+   <section id="certificates" class="py-20 px-4 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Trusted &amp; Certified</h2>
+      <p class="text-slate-400 max-w-2xl mx-auto">Licensed and regulated by industry leaders</p>
+     </div>
+     <div class="flex flex-wrap justify-center items-center gap-8"><!-- Certificate Badge 1 -->
+      <div class="flex flex-col items-center text-center hover:scale-105 transition-transform">
+       <div class="w-20 h-20 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-xl flex items-center justify-center mb-3 border border-emerald-500/30">
+        <svg class="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h3 class="text-white font-bold">NMLS Licensed</h3>
+      </div><!-- Certificate Badge 2 -->
+      <div class="flex flex-col items-center text-center hover:scale-105 transition-transform">
+       <div class="w-20 h-20 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-xl flex items-center justify-center mb-3 border border-emerald-500/30">
+        <svg class="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h3 class="text-white font-bold">ISO 27001</h3>
+      </div><!-- Certificate Badge 3 -->
+      <div class="flex flex-col items-center text-center hover:scale-105 transition-transform">
+       <div class="w-20 h-20 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-xl flex items-center justify-center mb-3 border border-emerald-500/30">
+        <svg class="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h3 class="text-white font-bold">SOC 2 Type II</h3>
+      </div><!-- Certificate Badge 4 -->
+      <div class="flex flex-col items-center text-center hover:scale-105 transition-transform">
+       <div class="w-20 h-20 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-xl flex items-center justify-center mb-3 border border-emerald-500/30">
+        <svg class="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h3 class="text-white font-bold">FCA Approved</h3>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-20 px-4 bg-slate-800/50 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16">
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Get in Touch</h2>
+      <p class="text-slate-400 max-w-2xl mx-auto">Have questions? Our support team is here to help</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8"><!-- Phone -->
+      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 text-center hover:border-emerald-500/30 transition-all">
+       <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+        <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 00.948.684l1.498 4.493a1 1 0 00.502.756l2.048 1.029a11.04 11.04 0 01-5.516 5.516l-1.029-2.048a1 1 0 00-.756-.502L6.677 6.252A1 1 0 006.028 3.28V5z" />
+        </svg>
+       </div>
+       <h3 class="text-lg font-bold text-white mb-2">Call Us</h3>
+       <p class="text-slate-400 mb-4">Available 24/7 for your questions</p><a href="tel:1-800-LENDING-1" class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/30 hover:border-emerald-500/50 text-emerald-400 hover:text-emerald-300 px-4 py-2 rounded-lg transition-all text-sm font-medium">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20">
+         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.832-.783a11.04 11.04 0 005.68 5.68l.783-1.832a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2.57a1 1 0 01-.998-.948A16.948 16.948 0 113.539 2.75 1 1 0 012 3z" />
+        </svg> 1-800-LENDING-1 </a>
+      </div><!-- Email -->
+      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 text-center hover:border-emerald-500/30 transition-all">
+       <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+        <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+       </div>
+       <h3 class="text-lg font-bold text-white mb-2">Email Support</h3>
+       <p class="text-slate-400 mb-4">We'll respond within 2 hours</p><a href="mailto:support@lendingloan.com" class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/30 hover:border-emerald-500/50 text-emerald-400 hover:text-emerald-300 px-4 py-2 rounded-lg transition-all text-sm font-medium">
+        <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 20 20">
+         <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+        </svg> support@lendingloan.com </a>
+      </div><!-- Hours -->
+      <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8 text-center hover:border-emerald-500/30 transition-all">
+       <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+        <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h3 class="text-lg font-bold text-white mb-2">Business Hours</h3>
+       <p class="text-slate-400 text-sm"><span class="block">Mon-Fri: 8am - 10pm EST</span> <span class="block">Sat-Sun: 9am - 8pm EST</span> <span class="block mt-2">24/7 Phone Support Available</span></p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-8 px-4 border-t border-slate-800 bg-slate-900/50">
+    <div class="max-w-6xl mx-auto text-center">
+     <div class="flex items-center justify-center gap-2 mb-4">
+      <div class="logo-icon" style="width: 32px; height: 32px;">
+       <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" /> <path d="M12 12L8 16l4 4 8-8" />
+       </svg>
+      </div><span class="font-bold text-white">LendingLoan</span>
+     </div>
+     <p class="text-slate-500 text-sm">© 2024 LendingLoan. All rights reserved. NMLS #123456</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      hero_title: 'Get the <span class="gradient-text">Funding</span> You Need Today',
+      hero_subtitle: 'Quick approvals, competitive rates, and flexible terms tailored to your financial goals. LendingLoan connects you with the best loan options.',
+      form_title: 'Apply in Minutes',
+      button_text: 'Get My Free Quote',
+      feature_1_title: 'Lightning Fast Approval',
+      feature_2_title: 'Competitive Rates',
+      feature_3_title: 'No Hidden Fees',
+      background_color: '#0f172a',
+      surface_color: '#1e293b',
+      text_color: '#e2e8f0',
+      primary_action_color: '#10b981',
+      secondary_action_color: '#14b8a6'
+    };
+
+    let config = { ...defaultConfig };
+
+    // Data SDK handler
+    const dataHandler = {
+      onDataChanged(data) {
+        // Write-only app, no need to display data
+      }
+    };
+
+    // Element SDK functions
+    async function onConfigChange(cfg) {
+      config = { ...defaultConfig, ...cfg };
+      
+      // Update text content
+      document.getElementById('hero-title').innerHTML = config.hero_title || defaultConfig.hero_title;
+      document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+      document.getElementById('form-title').textContent = config.form_title || defaultConfig.form_title;
+      document.getElementById('button-text').textContent = config.button_text || defaultConfig.button_text;
+      document.getElementById('feature-1-title').textContent = config.feature_1_title || defaultConfig.feature_1_title;
+      document.getElementById('feature-2-title').textContent = config.feature_2_title || defaultConfig.feature_2_title;
+      document.getElementById('feature-3-title').textContent = config.feature_3_title || defaultConfig.feature_3_title;
+
+      // Update colors
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+
+      document.getElementById('app-wrapper').style.backgroundColor = bgColor;
+      
+      // Update form card
+      const formCard = document.querySelector('.bg-slate-800\\/80');
+      if (formCard) {
+        formCard.style.backgroundColor = surfaceColor;
+      }
+
+      // Update submit button gradient
+      const submitBtn = document.getElementById('submit-btn');
+      if (submitBtn) {
+        submitBtn.style.background = `linear-gradient(to right, ${primaryColor}, ${secondaryColor})`;
+      }
+
+      // Update text colors
+      document.querySelectorAll('.text-white').forEach(el => {
+        el.style.color = textColor;
+      });
+    }
+
+    function mapToCapabilities(cfg) {
+      return {
+        recolorables: [
+          {
+            get: () => cfg.background_color || defaultConfig.background_color,
+            set: (value) => {
+              cfg.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => cfg.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              cfg.surface_color = value;
+              window.elementSdk.setConfig({ surface_color: value });
+            }
+          },
+          {
+            get: () => cfg.text_color || defaultConfig.text_color,
+            set: (value) => {
+              cfg.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => cfg.primary_action_color || defaultConfig.primary_action_color,
+            set: (value) => {
+              cfg.primary_action_color = value;
+              window.elementSdk.setConfig({ primary_action_color: value });
+            }
+          },
+          {
+            get: () => cfg.secondary_action_color || defaultConfig.secondary_action_color,
+            set: (value) => {
+              cfg.secondary_action_color = value;
+              window.elementSdk.setConfig({ secondary_action_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(cfg) {
+      return new Map([
+        ['hero_title', cfg.hero_title || defaultConfig.hero_title],
+        ['hero_subtitle', cfg.hero_subtitle || defaultConfig.hero_subtitle],
+        ['form_title', cfg.form_title || defaultConfig.form_title],
+        ['button_text', cfg.button_text || defaultConfig.button_text],
+        ['feature_1_title', cfg.feature_1_title || defaultConfig.feature_1_title],
+        ['feature_2_title', cfg.feature_2_title || defaultConfig.feature_2_title],
+        ['feature_3_title', cfg.feature_3_title || defaultConfig.feature_3_title]
+      ]);
+    }
+
+    // Check if user can submit (24-hour cooldown)
+    function canSubmitLead() {
+      const lastSubmitTime = localStorage.getItem('lastLeadSubmitTime');
+      if (!lastSubmitTime) return true;
+      
+      const now = Date.now();
+      const timeSinceLastSubmit = now - parseInt(lastSubmitTime);
+      const twentyFourHours = 24 * 60 * 60 * 1000;
+      
+      return timeSinceLastSubmit >= twentyFourHours;
+    }
+
+    function getTimeUntilNextSubmit() {
+      const lastSubmitTime = localStorage.getItem('lastLeadSubmitTime');
+      if (!lastSubmitTime) return 0;
+      
+      const now = Date.now();
+      const timeSinceLastSubmit = now - parseInt(lastSubmitTime);
+      const twentyFourHours = 24 * 60 * 60 * 1000;
+      
+      return Math.max(0, twentyFourHours - timeSinceLastSubmit);
+    }
+
+    function startCountdown() {
+      const countdownSpan = document.getElementById('countdown');
+      const countdownMessage = document.getElementById('countdown-message');
+      
+      function updateCountdown() {
+        const timeRemaining = getTimeUntilNextSubmit();
+        if (timeRemaining <= 0) {
+          countdownMessage.classList.add('hidden');
+          return;
+        }
+        
+        const hours = Math.floor(timeRemaining / (60 * 60 * 1000));
+        const minutes = Math.floor((timeRemaining % (60 * 60 * 1000)) / (60 * 1000));
+        const seconds = Math.floor((timeRemaining % (60 * 1000)) / 1000);
+        
+        countdownSpan.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      }
+      
+      updateCountdown();
+      const interval = setInterval(updateCountdown, 1000);
+      
+      // Clear interval when countdown reaches 0
+      setTimeout(() => clearInterval(interval), getTimeUntilNextSubmit() + 1000);
+    }
+
+    // Form submission
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+      
+      // Check if user can submit
+      if (!canSubmitLead()) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 text-yellow-400 text-sm mb-4';
+        const timeRemaining = getTimeUntilNextSubmit();
+        const hours = Math.floor(timeRemaining / (60 * 60 * 1000));
+        const minutes = Math.floor((timeRemaining % (60 * 60 * 1000)) / (60 * 1000));
+        errorDiv.textContent = `You can submit another application in ${hours}h ${minutes}m. Please try again later.`;
+        const form = document.getElementById('loan-form');
+        form.insertBefore(errorDiv, form.firstChild);
+        setTimeout(() => errorDiv.remove(), 8000);
+        return;
+      }
+      
+      const submitBtn = document.getElementById('submit-btn');
+      const form = document.getElementById('loan-form');
+      const successMessage = document.getElementById('success-message');
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>Submitting...</span>
+      `;
+
+      const formData = {
+        full_name: document.getElementById('full_name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        loan_amount: document.getElementById('loan_amount').value,
+        loan_purpose: document.getElementById('loan_purpose').value,
+        submitted_at: new Date().toISOString()
+      };
+
+      const result = await window.dataSdk.create(formData);
+      
+      if (result.isOk) {
+        // Save submission time
+        localStorage.setItem('lastLeadSubmitTime', Date.now().toString());
+        
+        form.classList.add('hidden');
+        successMessage.classList.remove('hidden');
+        startCountdown();
+      } else {
+        // Show inline error
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-red-400 text-sm mb-4';
+        errorDiv.textContent = 'Something went wrong. Please try again.';
+        form.insertBefore(errorDiv, form.firstChild);
+        setTimeout(() => errorDiv.remove(), 5000);
+      }
+
+      // Reset button
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `
+        <span id="button-text">${config.button_text || defaultConfig.button_text}</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      `;
+    }
+
+    function handleCloseMessage() {
+      const form = document.getElementById('loan-form');
+      const successMessage = document.getElementById('success-message');
+      form.reset();
+      form.classList.remove('hidden');
+      successMessage.classList.add('hidden');
+    }
+
+    // Initialize
+    async function init() {
+      // Initialize Element SDK
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities,
+          mapToEditPanelValues
+        });
+      }
+
+      // Initialize Data SDK
+      if (window.dataSdk) {
+        await window.dataSdk.init(dataHandler);
+      }
+
+      // Set up form handlers
+      document.getElementById('loan-form').addEventListener('submit', handleFormSubmit);
+      document.getElementById('close-message').addEventListener('click', handleCloseMessage);
+    }
+
+    init();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cbb241310c3d220',t:'MTc3MDcyMTYyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
